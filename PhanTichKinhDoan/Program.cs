@@ -16,10 +16,11 @@ namespace PhanTichKinhDoan
         [STAThread]
         static void Main()
         {
+            CuaHang ch = new CuaHang(1, "Tên CH", "", null);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DangNhapForm());
-            /*Application.Run(new TrangChu(ch));*/
+            /*Application.Run(new DangNhapForm());*/
+            Application.Run(new TrangChu(ch));
         }
     }
 }
