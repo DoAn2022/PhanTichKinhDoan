@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
@@ -66,7 +67,7 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.SlDb_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
@@ -77,7 +78,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.hinhCh)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SlDb_Chart)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -412,7 +413,7 @@
             // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.chart1);
+            this.tabPage3.Controls.Add(this.SlDb_Chart);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -421,21 +422,28 @@
             this.tabPage3.Text = "Biểu đồ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // chart1
+            // SlDb_Chart
             // 
             chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
+            this.SlDb_Chart.ChartAreas.Add(chartArea1);
             legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(92, 36);
-            this.chart1.Name = "chart1";
+            this.SlDb_Chart.Legends.Add(legend1);
+            this.SlDb_Chart.Location = new System.Drawing.Point(6, 6);
+            this.SlDb_Chart.Name = "SlDb_Chart";
+            this.SlDb_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
             series1.ChartArea = "ChartArea1";
+            series1.LabelForeColor = System.Drawing.Color.Red;
             series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(480, 328);
-            this.chart1.TabIndex = 0;
-            this.chart1.Text = "chart1";
+            series1.Name = "SLDB";
+            series2.ChartArea = "ChartArea1";
+            series2.LabelForeColor = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "SUM";
+            this.SlDb_Chart.Series.Add(series1);
+            this.SlDb_Chart.Series.Add(series2);
+            this.SlDb_Chart.Size = new System.Drawing.Size(654, 189);
+            this.SlDb_Chart.TabIndex = 0;
+            this.SlDb_Chart.Text = "chart1";
             // 
             // tabPage4
             // 
@@ -473,7 +481,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.SlDb_Chart)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -487,7 +495,7 @@
         private System.Windows.Forms.Label tenCH_TC;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.PictureBox hinhCh;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart SlDb_Chart;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label chaoMungText;

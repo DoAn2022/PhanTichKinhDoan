@@ -30,6 +30,15 @@ namespace PhanTichKinhDoan.Controller
                     cmd = new MySqlCommand(query, dBconnect.GetConnection());
 
                     cmd.ExecuteNonQuery();
+
+                    //Update số lượng đã bán của sản phẩm
+
+                    SanPham spCu = new SanPham();
+                    spCu.IdSp = dm.IdSp;
+                    SanPham spMoi = spCTL.ThongTinSanPham(spCu);
+                    spMoi.SlDb += dm.SL;
+                    spCTL.UpdateSp(spCu,spMoi);
+
                     MessageBox.Show("Thêm thành công!");
                     dBconnect.CloseConnection();
                 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace PhanTichKinhDoan.View
 {
@@ -43,12 +44,16 @@ namespace PhanTichKinhDoan.View
 
             //Truyền dữ liệu vào ListView
             spCTL.ToListView(homeSp_ListView,ch);
-            //Hết Tab Thông tin
             /*-------------------------------------------------------------------*/
+
             //Thêm dữ liệu tab NHẬP XUẤT
             hdCTL.ToListView(hd_ListView,ch);
-        //Hết Tab Nhập xuất
-        /*-------------------------------------------------------------------*/
+            /*-------------------------------------------------------------------*/
+
+            //Thêm dữ liệu tab Biểu đồ
+            spCTL.ToChart(SlDb_Chart, ch);
+
+            /*-------------------------------------------------------------------*/
 
 
         }

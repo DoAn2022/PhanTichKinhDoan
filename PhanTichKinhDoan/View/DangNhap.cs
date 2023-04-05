@@ -23,6 +23,8 @@ namespace PhanTichKinhDoan
         public DangNhapForm()
         {
             InitializeComponent();
+            tenCHField.Text = "BigC";
+            mkCHField.Text = "123456789";
         }
 
         //Ham check dang nhap

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using WinFormAppConnectDB;
 
 namespace PhanTichKinhDoan.Controller
@@ -129,9 +130,43 @@ namespace PhanTichKinhDoan.Controller
         }
 
         //Hàm update thông tin sản phẩm khi có hóa đơn mua
-        public void UpdateSp()
+        public void UpdateSp(SanPham spCu, SanPham spMoi)
         {
+            if (dBconnect.OpenConnection())
+            {
+                try
+                {
+                    string query = "UPDATE `analysis`.`sanpham` " +
+                        "SET `tenSp` = '"+spMoi.TenSp+"', `gia` = "+spMoi.Gia+", `Sl` = "+spMoi.Sl+", `SlDb` = "+spMoi.SlDb+" " +
+                        "WHERE (`idSp` = "+spCu.IdSp+");";
 
+                    cmd = new MySqlCommand(query, dBconnect.GetConnection());
+
+                    cmd.ExecuteNonQuery();
+                    dBconnect.CloseConnection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ", ex.Message);
+                }
+            }
+        }
+
+        //Truyền sản phẩm lên chart
+        public void ToChart(Chart chart, CuaHang ch)
+        {
+            List<SanPham> spList = AllSanPham(ch);
+
+            int i = 0;
+            foreach (SanPham sp in spList)
+            {
+                chart.Series["SLDB"].Points.AddXY(sp.TenSp, sp.SlDb);
+                chart.Series["SLDB"].Points[i].Label = sp.SlDb.ToString();
+
+                chart.Series["SUM"].Points.AddXY(sp.TenSp, sp.Sl);
+                chart.Series["SUM"].Points[i].Label = sp.Sl.ToString();
+                i++;
+            }
         }
     }
     
