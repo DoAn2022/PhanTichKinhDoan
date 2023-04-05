@@ -39,7 +39,10 @@ namespace PhanTichKinhDoan
             errorProvider2.SetError(tenCHFiledDK, null);
             errorProvider2.SetError(mkCHFieldDK, null);
 
-            if (!string.IsNullOrEmpty(tenCHFiledDK.Text) && !string.IsNullOrEmpty(mkCHFieldDK.Text))
+            if (!string.IsNullOrEmpty(tenCHFiledDK.Text) || !string.IsNullOrEmpty(mkCHFieldDK.Text)
+                ||!string.IsNullOrEmpty(diaChiBox.Text) || !string.IsNullOrEmpty(sdtNuBox.Text)
+                || !string.IsNullOrEmpty(chuShBox.Text) || !string.IsNullOrEmpty(maThueBox.Text)
+                )
             {
                 if (!chCTL.TenCHTonTai(tenCHFiledDK.Text))
                 {
@@ -47,6 +50,10 @@ namespace PhanTichKinhDoan
                     {
                         ch.TenCH = tenCHFiledDK.Text;
                         ch.Password = mkCHFieldDK.Text;
+                        ch.ChuSh = chuShBox.Text;
+                        ch.MaThue = maThueNuBox.Value.ToString();
+                        ch.DiaChi = diaChiBox.Text;
+                        ch.Sdt = sdtNuBox.Value.ToString();
                         MemoryStream ms  = new MemoryStream();
                         pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
                         ch.HinhAnh = ms.ToArray();
@@ -102,6 +109,11 @@ namespace PhanTichKinhDoan
             {
                 pictureBox1.Image = Image.FromFile(opf.FileName);
             }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

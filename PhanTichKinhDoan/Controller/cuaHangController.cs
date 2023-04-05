@@ -38,6 +38,10 @@ namespace PhanTichKinhDoan.Controller
                         cuaHang.TenCH = dataReader["tenCH"].ToString();
                         cuaHang.Password = dataReader["password"].ToString();
                         cuaHang.HinhAnh = (byte[])dataReader["image"];
+                        cuaHang.ChuSh = dataReader["chuSH"].ToString();
+                        cuaHang.DiaChi = dataReader["diaChi"].ToString();
+                        cuaHang.Sdt = dataReader["sdt"].ToString();
+                        cuaHang.MaThue = dataReader["maThue"].ToString();
                     }
 
                     dBconnect.CloseConnection();
@@ -57,8 +61,9 @@ namespace PhanTichKinhDoan.Controller
             {
                 try
                 {
-                    string query = "INSERT INTO `analysis`.`store` (`tenCH`,`password`,`image`) " +
-                        "VALUES ('" + ch.TenCH + "','"+ch.Password+"',@Image);";
+                    string query = "INSERT INTO `analysis`.`store` (`tenCH`,`password`,`image`,`maThue`, `chuSH`,`sdt`,`diaChi`) " +
+                        "VALUES ('" + ch.TenCH + "','"+ch.Password+"',@Image," +
+                        "'" + ch.MaThue + "','" + ch.ChuSh + "','" + ch.Sdt + "','" + ch.DiaChi + "');";
 
                     cmd = new MySqlCommand(query, dBconnect.GetConnection());
                     cmd.Parameters.Add("@Image",
