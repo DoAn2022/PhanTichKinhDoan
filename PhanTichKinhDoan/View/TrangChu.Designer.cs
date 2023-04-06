@@ -30,12 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.suaSp_link = new System.Windows.Forms.LinkLabel();
+            this.xoaSP_link = new System.Windows.Forms.LinkLabel();
+            this.themSp_link = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.homeSp_ListView = new System.Windows.Forms.ListView();
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,6 +64,7 @@
             this.hinhCh = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.themHD_BTN = new System.Windows.Forms.Button();
             this.dm_ListView = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -67,8 +74,20 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.CoCau_pieChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SlDb_Chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.TDT_Label = new System.Windows.Forms.Label();
+            this.DTTN_Label = new System.Windows.Forms.Label();
+            this.DTCN_Label = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.CIN_Label = new System.Windows.Forms.Label();
+            this.CNN_Label = new System.Windows.Forms.Label();
+            this.BIN_Label = new System.Windows.Forms.Label();
+            this.BCN_Label = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -78,7 +97,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.hinhCh)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.CoCau_pieChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlDb_Chart)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -98,6 +121,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.suaSp_link);
+            this.tabPage2.Controls.Add(this.xoaSP_link);
+            this.tabPage2.Controls.Add(this.themSp_link);
             this.tabPage2.Controls.Add(this.linkLabel1);
             this.tabPage2.Controls.Add(this.homeSp_ListView);
             this.tabPage2.Controls.Add(this.suaLabel);
@@ -115,6 +141,45 @@
             this.tabPage2.Text = "Thông tin";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // suaSp_link
+            // 
+            this.suaSp_link.AutoSize = true;
+            this.suaSp_link.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.suaSp_link.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.suaSp_link.Location = new System.Drawing.Point(427, 184);
+            this.suaSp_link.Name = "suaSp_link";
+            this.suaSp_link.Size = new System.Drawing.Size(31, 16);
+            this.suaSp_link.TabIndex = 9;
+            this.suaSp_link.TabStop = true;
+            this.suaSp_link.Text = "Sửa";
+            this.suaSp_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.suaSp_link_LinkClicked);
+            // 
+            // xoaSP_link
+            // 
+            this.xoaSP_link.AutoSize = true;
+            this.xoaSP_link.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xoaSP_link.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.xoaSP_link.Location = new System.Drawing.Point(390, 184);
+            this.xoaSP_link.Name = "xoaSP_link";
+            this.xoaSP_link.Size = new System.Drawing.Size(31, 16);
+            this.xoaSP_link.TabIndex = 9;
+            this.xoaSP_link.TabStop = true;
+            this.xoaSP_link.Text = "Xóa";
+            this.xoaSP_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.xoaSP_link_LinkClicked);
+            // 
+            // themSp_link
+            // 
+            this.themSp_link.AutoSize = true;
+            this.themSp_link.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.themSp_link.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.themSp_link.Location = new System.Drawing.Point(339, 184);
+            this.themSp_link.Name = "themSp_link";
+            this.themSp_link.Size = new System.Drawing.Size(45, 16);
+            this.themSp_link.TabIndex = 9;
+            this.themSp_link.TabStop = true;
+            this.themSp_link.Text = "Thêm ";
+            this.themSp_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.themSp_link_LinkClicked);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
@@ -129,6 +194,7 @@
             // 
             // homeSp_ListView
             // 
+            this.homeSp_ListView.CheckBoxes = true;
             this.homeSp_ListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6,
@@ -274,6 +340,7 @@
             this.label1.Size = new System.Drawing.Size(155, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Danh sách sản phẩm:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 
@@ -335,6 +402,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.themHD_BTN);
             this.tabPage1.Controls.Add(this.dm_ListView);
             this.tabPage1.Controls.Add(this.hd_ListView);
             this.tabPage1.Controls.Add(this.label2);
@@ -345,6 +413,16 @@
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "Nhập xuất";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // themHD_BTN
+            // 
+            this.themHD_BTN.Location = new System.Drawing.Point(594, 42);
+            this.themHD_BTN.Name = "themHD_BTN";
+            this.themHD_BTN.Size = new System.Drawing.Size(66, 46);
+            this.themHD_BTN.TabIndex = 5;
+            this.themHD_BTN.Text = "THÊM";
+            this.themHD_BTN.UseVisualStyleBackColor = true;
+            this.themHD_BTN.Click += new System.EventHandler(this.themHD_BTN_Click);
             // 
             // dm_ListView
             // 
@@ -410,9 +488,11 @@
             this.label2.Size = new System.Drawing.Size(144, 16);
             this.label2.TabIndex = 2;
             this.label2.Text = "Danh sách hóa đơn:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.CoCau_pieChart);
             this.tabPage3.Controls.Add(this.SlDb_Chart);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
@@ -422,31 +502,53 @@
             this.tabPage3.Text = "Biểu đồ";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // CoCau_pieChart
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.CoCau_pieChart.ChartAreas.Add(chartArea3);
+            legend3.Name = "Legend1";
+            this.CoCau_pieChart.Legends.Add(legend3);
+            this.CoCau_pieChart.Location = new System.Drawing.Point(155, 196);
+            this.CoCau_pieChart.Name = "CoCau_pieChart";
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series4.Legend = "Legend1";
+            series4.Name = "SP";
+            this.CoCau_pieChart.Series.Add(series4);
+            this.CoCau_pieChart.Size = new System.Drawing.Size(367, 229);
+            this.CoCau_pieChart.TabIndex = 1;
+            this.CoCau_pieChart.Text = "chart1";
+            // 
             // SlDb_Chart
             // 
-            chartArea1.Name = "ChartArea1";
-            this.SlDb_Chart.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.SlDb_Chart.Legends.Add(legend1);
+            chartArea4.Name = "ChartArea1";
+            this.SlDb_Chart.ChartAreas.Add(chartArea4);
+            legend4.Name = "Legend1";
+            this.SlDb_Chart.Legends.Add(legend4);
             this.SlDb_Chart.Location = new System.Drawing.Point(6, 6);
             this.SlDb_Chart.Name = "SlDb_Chart";
             this.SlDb_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series1.ChartArea = "ChartArea1";
-            series1.LabelForeColor = System.Drawing.Color.Red;
-            series1.Legend = "Legend1";
-            series1.Name = "SLDB";
-            series2.ChartArea = "ChartArea1";
-            series2.LabelForeColor = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "SUM";
-            this.SlDb_Chart.Series.Add(series1);
-            this.SlDb_Chart.Series.Add(series2);
+            series5.ChartArea = "ChartArea1";
+            series5.LabelForeColor = System.Drawing.Color.Red;
+            series5.Legend = "Legend1";
+            series5.Name = "SLDB";
+            series6.ChartArea = "ChartArea1";
+            series6.LabelForeColor = System.Drawing.Color.Red;
+            series6.Legend = "Legend1";
+            series6.Name = "SUM";
+            this.SlDb_Chart.Series.Add(series5);
+            this.SlDb_Chart.Series.Add(series6);
             this.SlDb_Chart.Size = new System.Drawing.Size(654, 189);
             this.SlDb_Chart.TabIndex = 0;
             this.SlDb_Chart.Text = "chart1";
+            this.SlDb_Chart.Click += new System.EventHandler(this.SlDb_Chart_Click);
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.label12);
+            this.tabPage4.Controls.Add(this.label4);
+            this.tabPage4.Controls.Add(this.panel5);
+            this.tabPage4.Controls.Add(this.panel4);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -454,6 +556,124 @@
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "Phân tích";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(40, 215);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 13);
+            this.label12.TabIndex = 3;
+            this.label12.Text = "Phân tích doanh thu";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(40, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(97, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Phân tích số lượng";
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.TDT_Label);
+            this.panel5.Controls.Add(this.DTTN_Label);
+            this.panel5.Controls.Add(this.DTCN_Label);
+            this.panel5.Location = new System.Drawing.Point(6, 222);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(646, 178);
+            this.panel5.TabIndex = 2;
+            // 
+            // TDT_Label
+            // 
+            this.TDT_Label.AutoSize = true;
+            this.TDT_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TDT_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.TDT_Label.Location = new System.Drawing.Point(34, 42);
+            this.TDT_Label.Name = "TDT_Label";
+            this.TDT_Label.Size = new System.Drawing.Size(118, 16);
+            this.TDT_Label.TabIndex = 1;
+            this.TDT_Label.Text = "Tổng doanh thu:";
+            // 
+            // DTTN_Label
+            // 
+            this.DTTN_Label.AutoSize = true;
+            this.DTTN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTTN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DTTN_Label.Location = new System.Drawing.Point(34, 124);
+            this.DTTN_Label.Name = "DTTN_Label";
+            this.DTTN_Label.Size = new System.Drawing.Size(251, 16);
+            this.DTTN_Label.TabIndex = 1;
+            this.DTTN_Label.Text = "Sản phẩm cho doanh thu thấp nhất: ";
+            // 
+            // DTCN_Label
+            // 
+            this.DTCN_Label.AutoSize = true;
+            this.DTCN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DTCN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.DTCN_Label.Location = new System.Drawing.Point(34, 85);
+            this.DTCN_Label.Name = "DTCN_Label";
+            this.DTCN_Label.Size = new System.Drawing.Size(247, 16);
+            this.DTCN_Label.TabIndex = 1;
+            this.DTCN_Label.Text = "Sản phẩm cho doanh thu cao nhất: ";
+            // 
+            // panel4
+            // 
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.CIN_Label);
+            this.panel4.Controls.Add(this.CNN_Label);
+            this.panel4.Controls.Add(this.BIN_Label);
+            this.panel4.Controls.Add(this.BCN_Label);
+            this.panel4.Location = new System.Drawing.Point(6, 9);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(646, 178);
+            this.panel4.TabIndex = 2;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // CIN_Label
+            // 
+            this.CIN_Label.AutoSize = true;
+            this.CIN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CIN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CIN_Label.Location = new System.Drawing.Point(34, 136);
+            this.CIN_Label.Name = "CIN_Label";
+            this.CIN_Label.Size = new System.Drawing.Size(87, 16);
+            this.CIN_Label.TabIndex = 1;
+            this.CIN_Label.Text = "Còn ít nhất: ";
+            // 
+            // CNN_Label
+            // 
+            this.CNN_Label.AutoSize = true;
+            this.CNN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CNN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.CNN_Label.Location = new System.Drawing.Point(34, 103);
+            this.CNN_Label.Name = "CNN_Label";
+            this.CNN_Label.Size = new System.Drawing.Size(112, 16);
+            this.CNN_Label.TabIndex = 1;
+            this.CNN_Label.Text = "Còn nhiều nhất:";
+            // 
+            // BIN_Label
+            // 
+            this.BIN_Label.AutoSize = true;
+            this.BIN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BIN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BIN_Label.Location = new System.Drawing.Point(34, 62);
+            this.BIN_Label.Name = "BIN_Label";
+            this.BIN_Label.Size = new System.Drawing.Size(83, 16);
+            this.BIN_Label.TabIndex = 1;
+            this.BIN_Label.Text = "Bán ít nhất:";
+            // 
+            // BCN_Label
+            // 
+            this.BCN_Label.AutoSize = true;
+            this.BCN_Label.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCN_Label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BCN_Label.Location = new System.Drawing.Point(34, 24);
+            this.BCN_Label.Name = "BCN_Label";
+            this.BCN_Label.Size = new System.Drawing.Size(108, 16);
+            this.BCN_Label.TabIndex = 1;
+            this.BCN_Label.Text = "Bán chạy nhất:";
             // 
             // timer1
             // 
@@ -481,7 +701,14 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.CoCau_pieChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.SlDb_Chart)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -523,5 +750,21 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader11;
+        private System.Windows.Forms.LinkLabel suaSp_link;
+        private System.Windows.Forms.LinkLabel xoaSP_link;
+        private System.Windows.Forms.LinkLabel themSp_link;
+        private System.Windows.Forms.Button themHD_BTN;
+        private System.Windows.Forms.DataVisualization.Charting.Chart CoCau_pieChart;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Label TDT_Label;
+        private System.Windows.Forms.Label DTCN_Label;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label CIN_Label;
+        private System.Windows.Forms.Label CNN_Label;
+        private System.Windows.Forms.Label BIN_Label;
+        private System.Windows.Forms.Label BCN_Label;
+        private System.Windows.Forms.Label DTTN_Label;
     }
 }

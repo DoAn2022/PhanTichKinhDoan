@@ -40,7 +40,26 @@ namespace PhanTichKinhDoan.Controller
                 }
             }
         }
+        //Hàm xóa sản phẩm
+        public void DeleteSp(int idSp)
+        {
+            if (dBconnect.OpenConnection())
+            {
+                try
+                {
+                    string query = "DELETE FROM `analysis`.`sanpham` WHERE (`idSp` = "+idSp+");";
 
+                    cmd = new MySqlCommand(query, dBconnect.GetConnection());
+
+                    cmd.ExecuteNonQuery();
+                    dBconnect.CloseConnection();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi ", ex.Message);
+                }
+            }
+        }
 
         //Hàm lấy thông tin sanPham
         public SanPham ThongTinSanPham(SanPham sp)
@@ -155,7 +174,10 @@ namespace PhanTichKinhDoan.Controller
         //Truyền sản phẩm lên chart
         public void ToChart(Chart chart, CuaHang ch)
         {
-            List<SanPham> spList = AllSanPham(ch);
+            chart.Series["SLDB"].Points.Clear();
+            chart.Series["SUM"].Points.Clear();
+
+            List <SanPham> spList = AllSanPham(ch);
 
             int i = 0;
             foreach (SanPham sp in spList)
@@ -165,6 +187,26 @@ namespace PhanTichKinhDoan.Controller
 
                 chart.Series["SUM"].Points.AddXY(sp.TenSp, sp.Sl);
                 chart.Series["SUM"].Points[i].Label = sp.Sl.ToString();
+                i++;
+            }
+        }
+
+        public void ToPieChart(Chart chart, CuaHang ch)
+        {
+            chart.Series["SP"].Points.Clear();
+            List<SanPham> spList = AllSanPham(ch);
+            int i = 0;
+            int TongDT = 0;
+            foreach (SanPham sp in spList)
+            {
+                TongDT += sp.SlDb * sp.Gia;
+            }
+            foreach (SanPham sp in spList)
+            {
+                double dt = sp.SlDb * sp.Gia;
+                double per = Math.Round(dt / TongDT);
+                chart.Series["SP"].Points.AddXY(sp.TenSp, per);
+                chart.Series["SP"].Points[i].Label = per + "%";
                 i++;
             }
         }

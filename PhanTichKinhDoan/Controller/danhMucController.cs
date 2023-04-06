@@ -39,7 +39,6 @@ namespace PhanTichKinhDoan.Controller
                     spMoi.SlDb += dm.SL;
                     spCTL.UpdateSp(spCu,spMoi);
 
-                    MessageBox.Show("Thêm thành công!");
                     dBconnect.CloseConnection();
                 }
                 catch (Exception ex)
