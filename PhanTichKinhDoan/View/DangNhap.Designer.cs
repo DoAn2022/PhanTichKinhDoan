@@ -122,6 +122,7 @@
             this.quenMkLink.TabIndex = 4;
             this.quenMkLink.TabStop = true;
             this.quenMkLink.Text = "Bạn quên mật khẩu?";
+            this.quenMkLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.quenMkLink_LinkClicked);
             // 
             // errorProvider1
             // 

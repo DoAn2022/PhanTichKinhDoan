@@ -44,7 +44,7 @@ namespace PhanTichKinhDoan
                         ch = chCTL.ThongTinCuaHang(ch);
                         TrangChu tc = new TrangChu(ch);
                         this.Hide();
-                        tc.ShowDialog();
+                        tc.Show();
                         //End
                     }
                     else
@@ -63,6 +63,12 @@ namespace PhanTichKinhDoan
             {
                 MessageBox.Show("Bạn cần điền đầy đủ thông tin!");
             }
+        }
+
+        public void RePass()
+        {
+            DoiMatKhauForm f = new DoiMatKhauForm();
+            f.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -88,6 +94,11 @@ namespace PhanTichKinhDoan
                 mkCHField.PasswordChar = '*';
             }
             h++;
+        }
+
+        private void quenMkLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RePass();
         }
     }
 }

@@ -195,18 +195,20 @@ namespace PhanTichKinhDoan.Controller
         {
             chart.Series["SP"].Points.Clear();
             List<SanPham> spList = AllSanPham(ch);
-            int i = 0;
-            int TongDT = 0;
+
+            int tong = 0;
+
             foreach (SanPham sp in spList)
             {
-                TongDT += sp.SlDb * sp.Gia;
+                tong += sp.SlDb * sp.Gia;
             }
+            int i = 0;
             foreach (SanPham sp in spList)
             {
                 double dt = sp.SlDb * sp.Gia;
-                double per = Math.Round(dt / TongDT);
+                double per = Math.Round(dt);
                 chart.Series["SP"].Points.AddXY(sp.TenSp, per);
-                chart.Series["SP"].Points[i].Label = per + "%";
+                chart.Series["SP"].Points[i].Label = sp.TenSp + " " + Math.Round((dt / tong) * 100) + "%";
                 i++;
             }
         }

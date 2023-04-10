@@ -30,13 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TrangChu));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.suaSp_link = new System.Windows.Forms.LinkLabel();
@@ -504,43 +506,53 @@
             // 
             // CoCau_pieChart
             // 
-            chartArea3.Name = "ChartArea1";
-            this.CoCau_pieChart.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.CoCau_pieChart.Legends.Add(legend3);
+            chartArea1.Name = "ChartArea1";
+            this.CoCau_pieChart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.CoCau_pieChart.Legends.Add(legend1);
             this.CoCau_pieChart.Location = new System.Drawing.Point(155, 196);
             this.CoCau_pieChart.Name = "CoCau_pieChart";
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series4.Legend = "Legend1";
-            series4.Name = "SP";
-            this.CoCau_pieChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "SP";
+            this.CoCau_pieChart.Series.Add(series1);
             this.CoCau_pieChart.Size = new System.Drawing.Size(367, 229);
             this.CoCau_pieChart.TabIndex = 1;
             this.CoCau_pieChart.Text = "chart1";
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            title1.Name = "Title1";
+            title1.Text = "Biểu đồ cơ cấu doanh thu";
+            this.CoCau_pieChart.Titles.Add(title1);
             // 
             // SlDb_Chart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.SlDb_Chart.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.SlDb_Chart.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.SlDb_Chart.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.SlDb_Chart.Legends.Add(legend2);
             this.SlDb_Chart.Location = new System.Drawing.Point(6, 6);
             this.SlDb_Chart.Name = "SlDb_Chart";
             this.SlDb_Chart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Bright;
-            series5.ChartArea = "ChartArea1";
-            series5.LabelForeColor = System.Drawing.Color.Red;
-            series5.Legend = "Legend1";
-            series5.Name = "SLDB";
-            series6.ChartArea = "ChartArea1";
-            series6.LabelForeColor = System.Drawing.Color.Red;
-            series6.Legend = "Legend1";
-            series6.Name = "SUM";
-            this.SlDb_Chart.Series.Add(series5);
-            this.SlDb_Chart.Series.Add(series6);
+            series2.ChartArea = "ChartArea1";
+            series2.LabelForeColor = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "SLDB";
+            series3.ChartArea = "ChartArea1";
+            series3.LabelForeColor = System.Drawing.Color.Red;
+            series3.Legend = "Legend1";
+            series3.Name = "SUM";
+            this.SlDb_Chart.Series.Add(series2);
+            this.SlDb_Chart.Series.Add(series3);
             this.SlDb_Chart.Size = new System.Drawing.Size(654, 189);
             this.SlDb_Chart.TabIndex = 0;
             this.SlDb_Chart.Text = "chart1";
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            title2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            title2.Name = "Title1";
+            title2.Text = "Biểu đồ số lượng";
+            this.SlDb_Chart.Titles.Add(title2);
             this.SlDb_Chart.Click += new System.EventHandler(this.SlDb_Chart_Click);
             // 
             // tabPage4
@@ -577,6 +589,7 @@
             // 
             // panel5
             // 
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel5.Controls.Add(this.TDT_Label);
             this.panel5.Controls.Add(this.DTTN_Label);
             this.panel5.Controls.Add(this.DTCN_Label);

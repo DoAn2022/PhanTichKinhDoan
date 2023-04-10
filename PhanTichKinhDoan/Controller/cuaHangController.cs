@@ -123,5 +123,27 @@ namespace PhanTichKinhDoan.Controller
             return i > 0;
         }
 
+        //Hàm đổi mật khẩu theo so dien thoai
+
+        public void RePass(String sdt, String newPass)
+        {
+            if(dBconnect.OpenConnection())
+            {
+                try
+                {
+                    string query = "Update `analysis`.`store`" +
+                        "SET `password` = '"+newPass+"'" +
+                        "WHERE `sdt` = "+sdt+";";
+
+                    cmd = new MySqlCommand(query, dBconnect.GetConnection());
+                    cmd.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi kết nối! Thử lại!");
+                }
+            }
+            dBconnect.CloseConnection();
+        }
     }
 }
